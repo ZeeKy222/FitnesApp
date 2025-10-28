@@ -1,0 +1,134 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"] - FitnessApp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background: linear-gradient(to right, #74ebd5, #ACB6E5);
+            min-height: 100vh;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 5rem 1rem 3rem 1rem;
+            color: #fff;
+        }
+
+            .hero h1 {
+                font-size: 3rem;
+                font-weight: bold;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+        .btn-custom {
+            background-color: #ff7f50;
+            color: #fff;
+            font-weight: bold;
+        }
+
+            .btn-custom:hover {
+                background-color: #ff6333;
+                color: #fff;
+            }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            padding: 2rem 1rem;
+        }
+
+        .card-item {
+            background: linear-gradient(to bottom right, #f0f0f0, #e0e0e0);
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            cursor: pointer;
+            transition: all 0.3s ease-out;
+            text-align: center;
+            padding: 1rem;
+        }
+
+            .card-item:hover {
+                transform: translateY(-5px) scale(1.03);
+                box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+            }
+
+            .card-item img {
+                width: 8.25rem;
+                height: 5rem;
+                object-fit: contain;
+                margin-bottom: 0.5rem;
+                transition: all 0.3s ease;
+            }
+
+            .card-item:hover img {
+                filter: brightness(1.1);
+            }
+
+            .card-item h3 {
+                font-size: 0.9rem;
+                color: #333;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <h1>Welcome to FitnessApp!</h1>
+        <p>Your personal workout guide. Explore exercises and stay fit!</p>
+        <a href="/Exercises" class="btn btn-custom btn-lg mt-3">View Exercises</a>
+    </div>
+
+    <div class="grid">
+        <div class="card-item">
+            <img src="/images/bodyweight.png" alt="Bodyweight">
+            <h3>Bodyweight</h3>
+        </div>
+        <div class="card-item">
+            <img src="/images/dumbbell.png" alt="Dumbbell">
+            <h3>Dumbbell</h3>
+        </div>
+        <div class="card-item">
+            <img src="/images/barbell.png" alt="Barbell">
+            <h3>Barbell</h3>
+        </div>
+        <div class="card-item">
+            <img src="/images/kettlebell.png" alt="Kettlebell">
+            <h3>Kettlebell</h3>
+        </div>
+        <div class="card-item">
+            <img src="/images/band.png" alt="Band">
+            <h3>Band</h3>
+        </div>
+        <div class="card-item">
+            <img src="/images/plate.png" alt="Plate">
+            <h3>Plate</h3>
+        </div>
+        <div class="card-item">
+            <img src="/images/pull-up-bar.png" alt="Pull-up Bar">
+            <h3>Pull-up Bar</h3>
+        </div>
+        <div class="card-item">
+            <img src="/images/bench.png" alt="Bench">
+            <h3>Bench</h3>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+﻿
+
+
+
+@model IEnumerable<FitnessApp.Models.Exercise>
+@{
+    ViewData["Title"] = "Exercises";
+}
+
+<h2 class="mb-4">Exercise Library</h2>
+
+<div class="table-responsive">
+    <table class="table table-striped table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>Name</th>
+                <th>Muscle Group</th>
+                <th>Sets</th>
+                <th>Reps</th>
+                <th>Notes</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var ex in Model)
+            {
+            <tr>
+                <td>@ex.Name</td>
+                <td>@ex.Category</td>
+                <td>@ex.Description</td>
+                <td>
+                    @Html.Raw(string.IsNullOrWhiteSpace(ex.Name) ? "—"
+                                        : System.Web.HttpUtility.HtmlEncode(ex.Id).Replace("\n", "<br/>"))
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@ex.Id" class="btn btn-sm btn-outline-info">Details</a>
+                    <a asp-action="Edit" asp-route-id="@ex.Id" class="btn btn-sm btn-outline-warning">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@ex.Id" class="btn btn-sm btn-outline-danger"
+                       onclick="return confirm('Delete @ex.Name?');">Delete</a>
+                </td>
+            </tr>
+                        }
+        </tbody>
+    </table>
+</div>
+
